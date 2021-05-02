@@ -1,0 +1,19 @@
+{
+  "name": "2021-gradex",
+  "version": "1.0.0",
+  "description": "the official code repository for Graphic Design gradEx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alisq/2021-gradex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alisq/2021-gradex/issues"
+  },
+  "homepage": "https://github.com/alisq/2021-gradex#readme"
+}
