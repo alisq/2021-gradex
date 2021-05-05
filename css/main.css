@@ -11,3 +11,8 @@ html {
 body {
     font-size:2rem;
 }
+
+#students {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr
+}

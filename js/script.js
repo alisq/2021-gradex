@@ -1,5 +1,7 @@
-# 2021-gradex
-the official code repository for Graphic Design gradEx
+var url="http://2021.ocadu.gd/feed/json/";
 
-# current JSON feed located at:
-http://2021.ocadu.gd/json/all-work
+fetch(url)
+.then(response => response.json())
+  .then(p => {
+      console.log(p)
+  });
