@@ -1,36 +1,31 @@
 var url="http://2021.ocadu.gd/feed/json/";
 
-var allData = ["one","two","three","five","four"];
-
 fetch(url)
 .then(response => response.json())
   .then(p => {
-      console.log(p)
+    console.log(p.length)
+      for (i=0;i<p.length;i++) {
+        console.log(p[i])
+        $("#students").append("<div class='student'><div class='initials'>"+intialize(p[i].field_last_name)+"</div><div class='profile-img' style='background:url(http://2021.ocadu.gd"+p[i].field_profile_image+")'></div></div>")
+
+        
+      }
+    
   });
+     
+
+//   <div class='student'>
+//   <div class='initials'>"+intialize(p[i].field_last_name)+"</div>
+//   <div class='profile-img' style='background:url(http://2021.ocadu.gd"+p[i].field_profile_images+")'></div>
+// </div>
 
 
-  var obj = {
-    foo: 'bar'
+
+
+  //function to convert to initials
+
+  function intialize(text) {
+    const fullName = text.split(' ');
+    const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
+    return initials.toUpperCase();
   }
-  
-  //Object.freeze(obj)
-  
-
-
-  // Define a new component called button-counter
-Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
-
-
-new Vue({
-  el: '#app',
-  data: obj
-})
-
-new Vue({ el: '#cd' })

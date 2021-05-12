@@ -1,0 +1,85 @@
+
+//menu 
+
+#navigation {
+    position:fixed;
+    top:0;
+    width:100%;
+    height:3.125vw;
+    background:#FFF;
+    border-bottom:1px solid #000;
+    z-index:10;
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+
+    &__menu {
+        width:100%;
+        height:100%;
+        list-style-type:none;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+
+
+
+// this is the big grid
+
+#students {
+    margin-top:3.125vw;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-gap:1px;
+
+
+}
+
+
+
+
+.student {
+    
+    height: 12.5vw;
+    position:relative;
+    box-shadow:0 0 0 1px #000;
+    cursor:pointer;
+
+    & .initials {
+        width:8rem;
+        height:8rem;
+        background:grey;
+        border-radius:50%;
+        position:absolute;
+        top:50%; left:50%;
+        transform:translate(-50%,-50%);
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        transition:all 0.1s
+        
+    }
+
+    & .profile-img {
+        width:100%;
+        height:100%;
+        background-size:cover;
+        background-position:50% 50%;
+        z-index:10;
+        opacity:0;
+        transition:all 0.1s
+    }
+
+    &:hover .initials {
+        opacity:0;
+        transform-origin: 65% 65%;
+        transform:scale(4);
+        
+    }
+
+    &:hover .profile-img {
+        opacity:1;
+    }
+}
+
