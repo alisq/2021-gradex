@@ -47,8 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   .student .initials {
     width: 8rem;
     height: 8rem;
-    background: white;
-    border: 2px solid #000;
+    background: grey;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -83,9 +82,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5em;
     background: #CCFF00;
     opacity: 0;
-    transition: all 0.1s;
-    border-top: 2px solid #FFF;
-    border-left: 2px solid #FFF; }
+    transition: all 0.1s; }
   .student:hover .initials {
     opacity: 0;
     transform-origin: 65% 65%;
@@ -101,10 +98,3 @@ h1 {
   display: flex;
   align-items: center;
   padding-left: 2rem; }
-
-#site-title {
-  position: fixed;
-  font-size: 18vw;
-  pointer-events: none;
-  text-transform: uppercase;
-  line-height: 0.8em; }
