@@ -39,6 +39,9 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1px; }
 
+#student {
+  margin-top: 3.125vw; }
+
 .student {
   height: 12.5vw;
   position: relative;
