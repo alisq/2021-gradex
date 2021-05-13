@@ -1,13 +1,40 @@
+@font-face {
+    font-family: "suisse";
+    src: url("/fonts/SuisseIntl-Regular-WebS.woff2") format("woff2"),
+         url("/fonts/SuisseIntl-Regular-WebS.woff") format("woff"),
+         url("/fonts/SuisseIntl-Regular-WebS.eot") format("eot"),
+         url("/fonts/SuisseIntl-Regular-WebS.svg") format("svg"),
+         url("/fonts/SuisseIntl-Regular-WebS.ttf") format("ttf");
+  }
+
+  body {
+      font-family: 'suisse';
+  }
+
+
+
+a:link,
+a:visited {
+    color:#000;
+    text-decoration:underline;
+}
+
+a:hover {
+    text-decoration:none;
+}
+
 h1 {
     height:100%;
     display:flex;
     align-items: center;
     padding-left:2rem;
+    cursor:pointer;
 }
 
 
 #site-title {
     position:fixed;
+    z-index:15;
     font-size:18vw;
     pointer-events:none;
     text-transform:uppercase;

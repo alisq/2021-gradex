@@ -4,6 +4,7 @@ fetch(url)
 .then(response => response.json())
   .then(p => {
     //console.log(p.length)
+    shuffle(p)
       for (i=0;i<p.length;i++) {
         //console.log(p[i])
         $("#students").append("<div class='student' id='student-"+p[i].nid+"'><div class='initials'>"+intialize(p[i].field_last_name)+"</div><div class='profile-img' style='background-image:url(http://2021.ocadu.gd"+p[i].field_profile_image+")'></div><div class='thumb-img' style='background-image:url(http://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div><div class='profile-name'>"+p[i].field_last_name+"</div></div>")
@@ -13,6 +14,13 @@ fetch(url)
     
   });
 
+
+  $("h1").click(function(){
+    $("#site-title").fadeIn(200);
+    $("#student").fadeOut(200).delay(300).remove();
+    $("#students").delay(300).removeClass("selected");
+
+  })
 
   
      
@@ -26,17 +34,56 @@ fetch(url)
 
 $(document).on("click",".student", function(){
   nid = $(this).attr("id").replace("student-","");
+  $("#site-title").delay(200).fadeOut(200);
 
+  $("#student").fadeOut(200).delay(200).remove();
+
+  $("#students").addClass("selected")
   
   fetch("http://2021.ocadu.gd/s/"+nid)
 .then(response => response.json())
   .then(p => {
-      console.log(p);
-    $("#students, #site-title").fadeOut(200).delay(200).remove();
+      console.log(p[0].field_project_);
+    
       
-      $("<div></div>")
+
+      
+      $("<div id='student'></div>")
+      
+      
+          .append("<div class='gallery'>"+p[0].field_project_images.replaceAll("\/sites","http:\/\/2021.ocadu.gd\/sites")+"</div>")
           .append("<h2>"+p[0].title+"</h2>")
-          .appendTo("#student")
+          .append("<p>"+p[0].field_project_description+"</p>")
+          .append("<p>"+p[0].field_profile_image.replace("\/sites","http:\/\/2021.ocadu.gd\/sites")+"</p>")
+          .append("<p>"+p[0].field_given_names+" "+p[0].field_last_name+"</p>")
+          .append("<p>"+p[0].field_email+"</p>")
+          
+          .append("<p>"+p[0].field_short_biography+"</p>")
+          .append("<p>"+p[0].body+"</p>")
+          .append("<label>tags:</label> "+p[0].field_tags+" "+p[0].field_additional_)
+          .append("<label>workshop instructor:</label> "+p[0].field_workshop_)
+          
+// field_portfolio_site_link: "<a href=\"https://kmiron.ca\">https://kmiron.ca</a>"
+// field_additional_: ""
+// field_behance_link: ""
+// field_instagram_link: "<a href=\"https://www.instagram.com/kmiron_/\">https://www.instagram.com/kmiron_/</a>"
+// field_linked_in_link: "<a href=\"https://ca.linkedin.com/in/kyle-miron-9209731a7\">https://ca.linkedin.com/in/kyle-miron-9209731a7</a>"
+
+// field_project_: "<a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">annog reven</a>, <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">uoy evig</a>, <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">pu</a>"
+
+
+// field_tags: "<a href=\"/taxonomy/term/14\" hreflang=\"en\">Typography</a>"
+
+
+
+          .prependTo("main")
+
+
+          $('.gallery ul').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true
+          });
     
   });
 })
@@ -48,4 +95,27 @@ $(document).on("click",".student", function(){
     const fullName = text.split(' ');
     const initials = fullName.shift().charAt(0) + fullName.pop().charAt(0);
     return initials.toUpperCase();
+  }
+
+
+  //function to shuffle
+
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
   }
