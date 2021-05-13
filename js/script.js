@@ -1,4 +1,4 @@
-var url="http://2021.ocadu.gd/feed/json/";
+var url="https://2021.ocadu.gd/feed/json/";
 
 fetch(url)
 .then(response => response.json())
@@ -7,7 +7,7 @@ fetch(url)
     shuffle(p)
       for (i=0;i<p.length;i++) {
         //console.log(p[i])
-        $("#students").append("<div class='student' id='student-"+p[i].nid+"'><div class='initials'>"+intialize(p[i].field_last_name)+"</div><div class='profile-img' style='background-image:url(http://2021.ocadu.gd"+p[i].field_profile_image+")'></div><div class='thumb-img' style='background-image:url(http://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div><div class='profile-name'>"+p[i].field_last_name+"</div></div>")
+        $("#students").append("<div class='student' id='student-"+p[i].nid+"'><div class='initials'>"+intialize(p[i].field_last_name)+"</div><div class='profile-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_profile_image+")'></div><div class='thumb-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div><div class='profile-name'>"+p[i].field_last_name+"</div></div>")
 
          
       }
@@ -27,8 +27,8 @@ fetch(url)
 
 //   <div class='student'  id='student-"+p[i].nid+"'>
 //   <div class='initials'>"+intialize(p[i].field_last_name)+"</div>
-//   <div class='profile-img' style='background-image:url(http://2021.ocadu.gd"+p[i].field_profile_image+")'></div>
-//   <div class='thumb-img' style="background-image:url(http://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div>
+//   <div class='profile-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_profile_image+")'></div>
+//   <div class='thumb-img' style="background-image:url(https://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div>
 //    <div class='profile-name'>"+p[i].field_last_name+"</div>
 // </div>
 
@@ -40,7 +40,7 @@ $(document).on("click",".student", function(){
 
   $("#students").addClass("selected")
   
-  fetch("http://2021.ocadu.gd/s/"+nid)
+  fetch("https://2021.ocadu.gd/s/"+nid)
 .then(response => response.json())
   .then(p => {
       console.log(p[0].field_project_);
@@ -51,10 +51,10 @@ $(document).on("click",".student", function(){
       $("<div id='student'></div>")
       
       
-          .append("<div class='gallery'>"+p[0].field_project_images.replaceAll("\/sites","http:\/\/2021.ocadu.gd\/sites")+"</div>")
+          .append("<div class='gallery'>"+p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</div>")
           .append("<h2>"+p[0].title+"</h2>")
           .append("<p>"+p[0].field_project_description+"</p>")
-          .append("<p>"+p[0].field_profile_image.replace("\/sites","http:\/\/2021.ocadu.gd\/sites")+"</p>")
+          .append("<p>"+p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</p>")
           .append("<p>"+p[0].field_given_names+" "+p[0].field_last_name+"</p>")
           .append("<p>"+p[0].field_email+"</p>")
           
