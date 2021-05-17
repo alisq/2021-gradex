@@ -10,7 +10,7 @@
     border-bottom:1px solid #000;
     z-index:100;
     display:grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 5fr 3fr;
 
     &__menu {
         width:100%;
@@ -148,6 +148,7 @@ top: 0;
 
     &:hover {
         border:2px solid $color-green;
+        z-index:22;
 
     }
 
