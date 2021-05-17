@@ -3,6 +3,11 @@ currentURL = window.location.hash.replace("#","").split("/");
 route(currentURL)
 
 
+window.addEventListener("hashchange", function(e) {
+  console.log(e)
+})
+
+
 var url="https://2021.ocadu.gd/feed/json/";
 
 fetch(url)
@@ -25,6 +30,7 @@ fetch(url)
     $("#site-title").fadeIn(200);
     $("#student").fadeOut(200).delay(300).remove();
     $("#students").delay(300).removeClass("selected");
+    shuffle();
 
   })
 
@@ -53,7 +59,21 @@ $(document).on("click",".student", function(){
   fetch("https://2021.ocadu.gd/s/"+nid)
 .then(response => response.json())
   .then(p => {
-    console.log(p)
+    
+    vids = p[0].video.split(", ");
+    vidz = ""
+    for (j=0;j<vids.length;j++) {
+      
+      if (vids[j].includes("youtube")) {
+        vidz += `<div class="project-vid"><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/${vids[j].replace("https://www.youtube.com/watch?v=","").split("&")[0]}' frameborder='0' allowfullscreen></iframe></div></div>`
+      } else if (vids[j].includes("vimeo")) {
+        vidz += `<div class="project-vid"><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/${vids[j].replace("https://vimeo.com/","")}' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></div>`
+      }
+    }
+    
+   // if (p[0].video.contains("youtube"))
+
+
     pageTitle = p[0].field_given_names+" "+p[0].field_last_name + ' | Virtual by Necessity';
     $("title").text(pageTitle)
       window.history.pushState("https://2021.ocadu.gd", pageTitle)
@@ -66,6 +86,7 @@ $(document).on("click",".student", function(){
         <div class="student--left">
           <h2>${p[0].title}</h2>
           <div class='gallery'>
+            ${vidz}
             ${p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")}
           </div>
           <p>${p[0].body}</p>
@@ -95,30 +116,7 @@ $(document).on("click",".student", function(){
 
         `)
       
-          
-          // .append("<h2>"+p[0].title+"</h2>")
-          // .append("<p>"+p[0].field_project_description+"</p>")
-          // .append("<p>"+p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</p>")
-          // .append("<p>"+p[0].field_given_names+" "+p[0].field_last_name+"</p>")
-          // .append("<p>"+p[0].field_email+"</p>")
-          
-          // .append("<p>"+p[0].field_short_biography+"</p>")
-          // .append("<p>"+p[0].body+"</p>")
-          // .append("<label>tags:</label> "+p[0].field_tags+" "+p[0].field_additional_)
-          // .append("<label>workshop instructor:</label> "+p[0].field_workshop_)
-          
-// field_portfolio_site_link: "<a href=\"https://kmiron.ca\">https://kmiron.ca</a>"
-// field_additional_: ""
-// field_behance_link: ""
-// field_instagram_link: "<a href=\"https://www.instagram.com/kmiron_/\">https://www.instagram.com/kmiron_/</a>"
-// field_linked_in_link: "<a href=\"https://ca.linkedin.com/in/kyle-miron-9209731a7\">https://ca.linkedin.com/in/kyle-miron-9209731a7</a>"
-
-// field_project_: "<a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">annog reven</a>, <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">uoy evig</a>, <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">pu</a>"
-
-
-// field_tags: "<a href=\"/taxonomy/term/14\" hreflang=\"en\">Typography</a>"
-
-
+        
 
           .prependTo("main")
 
@@ -176,4 +174,28 @@ $(document).on("click",".student", function(){
         $("#student-"+currentURL[1]).click()
       },500)
     }
+    }
+
+
+
+    function shuffle() {
+      var container = document.getElementById("students");
+      var elementsArray = Array.prototype.slice.call(container.getElementsByClassName('student'));
+      elementsArray.forEach(function(element){
+        container.removeChild(element);
+      })
+      shuffleArray(elementsArray);
+      elementsArray.forEach(function(element){
+      container.appendChild(element);
+    })
+    }
+    
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
     }
