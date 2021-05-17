@@ -16,7 +16,7 @@ fetch(url)
 
 
   $("h1").click(function(){
-    $("#site-title").fadeIn(200);
+    //$("#site-title").fadeIn(200);
     $("#student").fadeOut(200).delay(300).remove();
     $("#students").delay(300).removeClass("selected");
 
@@ -43,25 +43,40 @@ $(document).on("click",".student", function(){
   fetch("https://2021.ocadu.gd/s/"+nid)
 .then(response => response.json())
   .then(p => {
-      console.log(p[0].field_project_);
-    
-      
+      window.history.pushState("https://2021.ocadu.gd", p[0].field_given_names+" "+p[0].field_last_name)
 
       
       $("<div id='student'></div>")
+      /* html */  
+      .append(`
+        
+        <div class='gallery'>
+          ${p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")}
+        </div>
+        <h2>${p[0].title}</h2>
+        <p>${p[0].field_project_description}</p>
+        <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
+        <p>${p[0].field_given_names} ${p[0].field_last_name}</p>
+        <p>${p[0].field_email}</p>
+
+        <p>${p[0].field_short_biography}</p>
+        <p>${p[0].body}</p>
+        <label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}
+        <label>workshop instructor:</label> "+p[0].field_workshop_}
+
+        `)
       
-      
-          .append("<div class='gallery'>"+p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</div>")
-          .append("<h2>"+p[0].title+"</h2>")
-          .append("<p>"+p[0].field_project_description+"</p>")
-          .append("<p>"+p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</p>")
-          .append("<p>"+p[0].field_given_names+" "+p[0].field_last_name+"</p>")
-          .append("<p>"+p[0].field_email+"</p>")
           
-          .append("<p>"+p[0].field_short_biography+"</p>")
-          .append("<p>"+p[0].body+"</p>")
-          .append("<label>tags:</label> "+p[0].field_tags+" "+p[0].field_additional_)
-          .append("<label>workshop instructor:</label> "+p[0].field_workshop_)
+          // .append("<h2>"+p[0].title+"</h2>")
+          // .append("<p>"+p[0].field_project_description+"</p>")
+          // .append("<p>"+p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")+"</p>")
+          // .append("<p>"+p[0].field_given_names+" "+p[0].field_last_name+"</p>")
+          // .append("<p>"+p[0].field_email+"</p>")
+          
+          // .append("<p>"+p[0].field_short_biography+"</p>")
+          // .append("<p>"+p[0].body+"</p>")
+          // .append("<label>tags:</label> "+p[0].field_tags+" "+p[0].field_additional_)
+          // .append("<label>workshop instructor:</label> "+p[0].field_workshop_)
           
 // field_portfolio_site_link: "<a href=\"https://kmiron.ca\">https://kmiron.ca</a>"
 // field_additional_: ""

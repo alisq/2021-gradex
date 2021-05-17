@@ -19,7 +19,9 @@ a:visited {
     text-decoration:underline;
 }
 
+nav li:hover,
 a:hover {
+    color:$color-green;
     text-decoration:none;
 }
 
@@ -39,4 +41,5 @@ h1 {
     pointer-events:none;
     text-transform:uppercase;
     line-height:0.8em;
+    display:none
 }

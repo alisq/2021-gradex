@@ -28,9 +28,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 3.125vw;
   background: #FFF;
   border-bottom: 1px solid #000;
-  z-index: 10;
+  z-index: 100;
   display: grid;
-  grid-template-columns: 2fr 3fr; }
+  grid-template-columns: 3fr 2fr; }
   #navigation__menu {
     width: 100%;
     height: 100%;
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 8rem;
     height: 8rem;
     background: white;
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -103,6 +103,8 @@ h1, h2, h3, h4, h5, h6 {
     background: #CCFF00;
     opacity: 0;
     transition: all 0.1s; }
+  .student:hover {
+    border: 2px solid #CCFF00; }
   .student:hover .initials {
     opacity: 0;
     transform-origin: 65% 65%;
@@ -138,7 +140,9 @@ a:visited {
   color: #000;
   text-decoration: underline; }
 
+nav li:hover,
 a:hover {
+  color: #CCFF00;
   text-decoration: none; }
 
 h1 {
@@ -154,4 +158,5 @@ h1 {
   font-size: 18vw;
   pointer-events: none;
   text-transform: uppercase;
-  line-height: 0.8em; }
+  line-height: 0.8em;
+  display: none; }

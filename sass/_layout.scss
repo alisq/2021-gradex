@@ -2,15 +2,15 @@
 //menu 
 
 #navigation {
-    position:fixed;
+    position:fixed; 
     top:0;
     width:100%;
     height:3.125vw;
     background:#FFF;
     border-bottom:1px solid #000;
-    z-index:10;
+    z-index:100;
     display:grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 3fr 2fr;
 
     &__menu {
         width:100%;
@@ -73,7 +73,7 @@
         width:8rem;
         height:8rem;
         background:white;
-        border:2px solid #000;
+        border:1px solid #000;
         border-radius:50%;
         position:absolute;
         top:50%; left:50%;
@@ -124,6 +124,11 @@
         transition:all 0.1s;
         
         
+    }
+
+    &:hover {
+        border:2px solid $color-green;
+
     }
 
     &:hover .initials {
