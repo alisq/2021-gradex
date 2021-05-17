@@ -16,7 +16,7 @@ fetch(url)
 
 
   $("h1").click(function(){
-    //$("#site-title").fadeIn(200);
+    $("#site-title").fadeIn(200);
     $("#student").fadeOut(200).delay(300).remove();
     $("#students").delay(300).removeClass("selected");
 
@@ -49,20 +49,35 @@ $(document).on("click",".student", function(){
       $("<div id='student'></div>")
       /* html */  
       .append(`
-        
-        <div class='gallery'>
-          ${p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")}
+        <div class="student--left">
+          <h2>${p[0].title}</h2>
+          <div class='gallery'>
+            ${p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")}
+          </div>
+          <p>${p[0].body}</p>
+          <p>${p[0].field_project_description}</p>
+          <label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}
+          <label>workshop instructor:</label> ${[0].field_workshop_}
+          
         </div>
-        <h2>${p[0].title}</h2>
-        <p>${p[0].field_project_description}</p>
-        <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
-        <p>${p[0].field_given_names} ${p[0].field_last_name}</p>
-        <p>${p[0].field_email}</p>
+        <div class="student--right">
+          <h2>${p[0].field_given_names}<br />${p[0].field_last_name}</h2>
+          <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
+          <p>${p[0].field_short_biography}</p>
+          <p>${p[0].field_email}</p>
+          
+        </div>
+          
+          
+          
+          
+          
+          
 
-        <p>${p[0].field_short_biography}</p>
-        <p>${p[0].body}</p>
-        <label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}
-        <label>workshop instructor:</label> "+p[0].field_workshop_}
+          
+          
+          
+          
 
         `)
       

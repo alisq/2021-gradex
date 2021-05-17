@@ -12,24 +12,26 @@
   }
 
 
-
+nav li,
 a:link,
 a:visited {
     color:#000;
     text-decoration:underline;
+    cursor:pointer;
 }
 
 nav li:hover,
 a:hover {
     color:$color-green;
     text-decoration:none;
+    
 }
 
 h1 {
     height:100%;
     display:flex;
     align-items: center;
-    padding-left:2rem;
+    padding-left:1rem;
     cursor:pointer;
 }
 
@@ -41,5 +43,13 @@ h1 {
     pointer-events:none;
     text-transform:uppercase;
     line-height:0.8em;
-    display:none
+    top:50%; left:50%;
+    transform:translate(-50%,-50%)
+}
+
+h2 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    line-height: 0.85em;
+    max-width: 50%;
 }
