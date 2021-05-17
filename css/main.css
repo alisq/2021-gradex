@@ -47,19 +47,25 @@ h1, h2, h3, h4, h5, h6 {
   grid-gap: 1px; }
   #students.selected {
     position: fixed;
-    grid-template-columns: repeat(8, 1fr);
-    top: 44.5vw;
+    grid-template-columns: repeat(44, 1fr);
+    bottom: 0;
     z-index: 11;
-    width: 100%; }
+    width: calc(12.5vw * 44); }
 
 #student {
   margin-top: 3.125vw;
+  padding-bottom: calc(6.25vw + 1em);
   display: grid;
-  grid-template-columns: 3fr 2fr; }
+  grid-template-columns: 5fr 3fr; }
 
 .student--left,
 .student--right {
   padding: 1rem; }
+
+.student--right {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
 
 .student {
   height: 12.5vw;
@@ -102,7 +108,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     z-index: 16;
     opacity: 0;
-    transition: all 0.3s; }
+    transition-property: opacity;
+    transition-duration: 0.3s; }
   .student .profile-name {
     position: absolute;
     bottom: 0;
@@ -111,7 +118,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5em;
     background: #CCFF00;
     opacity: 0;
-    transition: all 0.1s; }
+    transition: all 0.1s;
+    z-index: 20; }
   .student:hover {
     border: 2px solid #CCFF00; }
   .student:hover .initials {
@@ -122,6 +130,9 @@ h1, h2, h3, h4, h5, h6 {
   .student:hover .profile-img,
   .student:hover .profile-name {
     opacity: 1; }
+  .student:hover .thumb-img {
+    transition-delay: 0.5s;
+    opacity: 1; }
   .student:active .thumb-img {
     opacity: 1; }
 
@@ -129,14 +140,7 @@ h1, h2, h3, h4, h5, h6 {
   list-style-type: none; }
 
 .gallery ul li {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-blockquote {
-  display: none; }
+  width: 100%; }
 
 @font-face {
   font-family: "suisse";
@@ -176,7 +180,15 @@ h1 {
   transform: translate(-50%, -50%); }
 
 h2 {
+  min-height: 11rem;
   font-size: 6rem;
   text-transform: uppercase;
   line-height: 0.85em;
   max-width: 50%; }
+
+.image-field-caption {
+  font-size: 1.5rem;
+  margin-bottom: 2rem; }
+
+p {
+  margin-bottom: 0.5em; }

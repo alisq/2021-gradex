@@ -1,3 +1,8 @@
+currentURL = window.location.hash.replace("#","").split("/"); 
+
+route(currentURL)
+
+
 var url="https://2021.ocadu.gd/feed/json/";
 
 fetch(url)
@@ -16,6 +21,7 @@ fetch(url)
 
 
   $("h1").click(function(){
+    window.location.hash = "#";
     $("#site-title").fadeIn(200);
     $("#student").fadeOut(200).delay(300).remove();
     $("#students").delay(300).removeClass("selected");
@@ -39,13 +45,21 @@ $(document).on("click",".student", function(){
   $("#student").fadeOut(200).delay(200).remove();
 
   $("#students").addClass("selected")
+
+  window.onpopstate = function(event) {
+  console.log(event)
+};
   
   fetch("https://2021.ocadu.gd/s/"+nid)
 .then(response => response.json())
   .then(p => {
-      window.history.pushState("https://2021.ocadu.gd", p[0].field_given_names+" "+p[0].field_last_name)
+    console.log(p)
+    pageTitle = p[0].field_given_names+" "+p[0].field_last_name + ' | Virtual by Necessity';
+    $("title").text(pageTitle)
+      window.history.pushState("https://2021.ocadu.gd", pageTitle)
+      window.location.hash="student/"+nid
 
-      
+          
       $("<div id='student'></div>")
       /* html */  
       .append(`
@@ -109,11 +123,11 @@ $(document).on("click",".student", function(){
           .prependTo("main")
 
 
-          $('.gallery ul').flickity({
-            // options
-            cellAlign: 'left',
-            contain: true
-          });
+          // $('.gallery ul').flickity({
+          //   // options
+          //   cellAlign: 'left',
+          //   contain: true
+          // });
     
   });
 })
@@ -149,3 +163,17 @@ $(document).on("click",".student", function(){
   
     return array;
   }
+
+
+  function route(currentURL) {
+    if  (currentURL[0] == "") {
+      setTimeout(function(){
+        $('h1').click()
+      },500)
+    
+    } else if (currentURL[0] == "student") {
+      setTimeout(function(){
+        $("#student-"+currentURL[1]).click()
+      },500)
+    }
+    }
