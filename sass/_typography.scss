@@ -12,11 +12,16 @@
   }
 
 
-nav li,
+
 a:link,
 a:visited {
     color:#000;
     text-decoration:underline;
+    
+}
+
+
+nav li {
     cursor:pointer;
 }
 

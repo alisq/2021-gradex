@@ -192,3 +192,28 @@ top: 0;
 .project-vid {
     margin-bottom:2rem
 }
+
+@media (max-width:1000px) {
+
+    #navigation {
+        position:static;
+        height:auto;
+        
+        
+        display: block;
+        grid-template-columns: 5fr 3fr;
+        text-align:center
+
+    }
+
+    #students {
+        margin-top: 0;
+        
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .student {
+        height:30vw;
+    }
+}

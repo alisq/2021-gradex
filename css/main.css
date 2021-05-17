@@ -146,6 +146,19 @@ h1, h2, h3, h4, h5, h6 {
 .project-vid {
   margin-bottom: 2rem; }
 
+@media (max-width: 1000px) {
+  #navigation {
+    position: static;
+    height: auto;
+    display: block;
+    grid-template-columns: 5fr 3fr;
+    text-align: center; }
+  #students {
+    margin-top: 0;
+    grid-template-columns: repeat(2, 1fr); }
+  .student {
+    height: 30vw; } }
+
 @font-face {
   font-family: "suisse";
   src: url("/fonts/SuisseIntl-Regular-WebS.woff2") format("woff2"), url("/fonts/SuisseIntl-Regular-WebS.woff") format("woff"), url("/fonts/SuisseIntl-Regular-WebS.eot") format("eot"), url("/fonts/SuisseIntl-Regular-WebS.svg") format("svg"), url("/fonts/SuisseIntl-Regular-WebS.ttf") format("ttf"); }
@@ -153,11 +166,12 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-family: 'suisse'; }
 
-nav li,
 a:link,
 a:visited {
   color: #000;
-  text-decoration: underline;
+  text-decoration: underline; }
+
+nav li {
   cursor: pointer; }
 
 nav li:hover,
