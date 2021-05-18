@@ -147,12 +147,14 @@ top: 0;
         
     }
 
+    &.active,
     &:hover {
         border:4px solid $color-green;
         z-index:22;
 
     }
 
+    &.active .initials,
     &:hover .initials {
         opacity:0;
         transform-origin: 65% 65%;
@@ -162,19 +164,19 @@ top: 0;
         
     }
 
+    &.active .profile-img,
+    &.active .profile-name,
     &:hover .profile-img,
     &:hover .profile-name{
         opacity:1;
     }
 
+    &.active .thumb-img,
     &:hover .thumb-img {
-        transition-delay: 0.5s;
+        transition-delay: 1s;
         opacity:1;
     }
 
-    &:active .thumb-img {
-        opacity:1;
-    }
 }
 
 

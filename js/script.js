@@ -7,6 +7,17 @@ window.addEventListener("hashchange", function(e) {
   console.log(e)
 })
 
+
+//random hover
+setInterval(function(){
+  $(".student.active").removeClass("active")
+    r = Math.floor(Math.random()*$(".student").length)
+
+    setTimeout(function(){
+    $('.student').eq(r).addClass("active");
+    },1000)
+},2000);
+
 fetch('https://2021.ocadu.gd/feed/tags')
 .then(response => response.json())
   .then(p => {
