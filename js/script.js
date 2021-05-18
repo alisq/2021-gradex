@@ -7,6 +7,16 @@ window.addEventListener("hashchange", function(e) {
   console.log(e)
 })
 
+fetch('https://2021.ocadu.gd/feed/tags')
+.then(response => response.json())
+  .then(p => {
+    for (k=0;k<p.length;k++) {
+      /* html */
+      $("#tags-filter").append(`<option class="tag-filter" data-link='t_${p[k].tid[0].value}'>${p[k].name[0].value}</option>`);      
+    }
+    
+  });
+
 
 var url="https://2021.ocadu.gd/feed/json/";
 
@@ -16,8 +26,20 @@ fetch(url)
     //console.log(p.length)
     shuffle(p)
       for (i=0;i<p.length;i++) {
-        //console.log(p[i])
-        $("#students").append("<div class='student' id='student-"+p[i].nid+"'><div class='initials'>"+intialize(p[i].field_last_name)+"</div><div class='profile-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_profile_image+")'></div><div class='thumb-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div><div class='profile-name'>"+p[i].field_last_name+"</div></div>")
+        
+        /* html */
+        $("#students-filter").append(`
+          <option class="student-filter" data-link="${p[i].nid}">${p[i].field_last_name}</option>
+        `)
+        
+        /* html */
+        $("#students").append(`
+          <div class='student ${p[i].field_additional_} ${p[i].field_tags}' id='student-${p[i].nid}'>
+            <div class='initials'>${intialize(p[i].field_last_name)}</div>
+            <div class='profile-img' style='background-image:url(https://2021.ocadu.gd${p[i].field_profile_image})'></div>
+            <div class='thumb-img' style='background-image:url(https://2021.ocadu.gd${p[i].field_thumbnail_image})'></div>
+            <div class='profile-name'>${p[i].field_last_name}</div>
+          </div>`)
 
          
       }
@@ -25,27 +47,35 @@ fetch(url)
   });
 
 
-  $("h1").click(function(){
-    window.location.hash = "#";
-    $("#site-title").fadeIn(200);
-    $("#student").fadeOut(200).delay(300).remove();
-    $("#students").delay(300).removeClass("selected");
-    shuffle();
+  //### FILTERS
 
+  //TAGS
+  $(document).on("change","#tags-filter",function(){
+    resetToHome();
+    filter = "."+$("#tags-filter option:selected" ).data("link");
+    $(filter).show(200);
+    $(".student").not(filter).hide(200);        
   })
 
-  
-     
+  //STUDENTS
+  $(document).on("change","#students-filter",function(){
+    resetToHome();
+    filter = "#student-"+$("#students-filter option:selected" ).data("link");
+    $(filter).click();
+  })
 
-//   <div class='student'  id='student-"+p[i].nid+"'>
-//   <div class='initials'>"+intialize(p[i].field_last_name)+"</div>
-//   <div class='profile-img' style='background-image:url(https://2021.ocadu.gd"+p[i].field_profile_image+")'></div>
-//   <div class='thumb-img' style="background-image:url(https://2021.ocadu.gd"+p[i].field_thumbnail_image+")'></div>
-//    <div class='profile-name'>"+p[i].field_last_name+"</div>
-// </div>
+  $("h1").click(function(){
+    resetToHome();
+  })
+
+
 
 $(document).on("click",".student", function(){
+  resetToHome();
+  $(".student").show(200)
   nid = $(this).attr("id").replace("student-","");
+
+  
   $("#site-title").delay(200).fadeOut(200);
 
   $("#student").fadeOut(200).delay(200).remove();
@@ -96,10 +126,12 @@ $(document).on("click",".student", function(){
           
         </div>
         <div class="student--right">
+        <div class='stick'>
           <h2>${p[0].field_given_names}<br />${p[0].field_last_name}</h2>
           <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
           <p>${p[0].field_short_biography}</p>
           <p>${p[0].field_email}</p>
+          </div>
           
         </div>
           
@@ -198,4 +230,16 @@ $(document).on("click",".student", function(){
             array[j] = temp;
         }
         return array;
+    }
+
+
+    function resetToHome() {
+      shuffle();
+      $("#tags-filter option[value=all]").attr('selected', 'selected');
+      $("#students-filter option[value=all]").attr('selected', 'selected');
+      $(".student").show(200)
+      $("#site-title").fadeIn(200);
+      $("#student").fadeOut(200).delay(300).remove();
+      $("#students").delay(300).removeClass("selected");
+      window.location.hash = ""
     }
