@@ -67,7 +67,7 @@ fetch(url)
         
         /* html */
         $("#students-filter").append(`
-          <li class="student-filter" data-link="${p[i].nid}"><div class='initials'>${intialize(p[i].field_last_name)}</div> ${p[i].field_last_name}</li>
+          <li class="student-filter ${p[i].field_additional_} ${p[i].field_tags}" data-link="${p[i].nid}"><div class='initials'>${intialize(p[i].field_last_name)}</div> ${p[i].field_last_name}</li>
         `)
         
         /* html */
@@ -95,6 +95,7 @@ fetch(url)
     $(this).addClass("active")
     $(filter).show(200);
     $(".student").not(filter).hide(200);        
+    $(".student-filter").not(filter).hide(200);        
   })
 
   //STUDENTS
