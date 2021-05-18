@@ -21,7 +21,7 @@
                 
                 
                 <li>ABOUT</li>
-                <li>FILTER</li>
+                <li id="menu-filter">FILTER</li>
                 
             </ul>
 
@@ -30,13 +30,9 @@
         
         <main>
             <section id="filters">
-                <select id="tags-filter">
-                    <option class="tag-filter" data-link="student" value="all">all</option>
-                </select>
+                <ul id="tags-filter"><li class="filter active tag-filter" data-link="student" value="all">ALL</li></ul>
 
-                <select id="students-filter">
-                    <option class="student-filter" data-link="student" value="all">all</option>
-                </select>
+                <ul id="students-filter"></ul>
             </section>
             <section id="students">
                

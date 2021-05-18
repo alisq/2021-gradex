@@ -26,6 +26,8 @@ nav li {
     font-size:3rem;
 }
 
+
+nav li.active,
 nav li:hover,
 a:hover {
     color:$color-green;
@@ -68,4 +70,56 @@ h2 {
 
 p {
     margin-bottom:0.5em;
+}
+
+#tags-filter,
+#students-filter {
+    list-style-type:none;
+}
+
+.tag-filter {
+    display:inline-block;
+    border:1px solid #000;
+    margin:0.15em;
+    padding:0.2em;
+    cursor:pointer;
+    font-size:0.75em;
+
+}
+
+
+.tag-filter:hover,
+.tag-filter.active {
+    background:$color-green;
+}
+
+.student-filter {
+    cursor:pointer;
+
+
+    & .initials {
+        border: 2px solid #000;
+    display: inline-flex;
+    width: 4rem;
+    height: 4rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin:0.3em;
+    font-size:0.75em;
+    
+    }
+
+
+    &:hover,
+    &:active {
+        color: $color-green;
+    }
+
+
+    &:hover .initials,
+    &:active .initials {
+        color:black;
+        background: $color-green;
+    }
 }

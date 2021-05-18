@@ -8,22 +8,49 @@ window.addEventListener("hashchange", function(e) {
 })
 
 
-//random hover
-setInterval(function(){
-  $(".student.active").removeClass("active")
-    r = Math.floor(Math.random()*$(".student").length)
+$("#menu-filter").click(function(){
+  resetToHome();
+  $(this).toggleClass("active")
+  if ($("#filters").hasClass("active")) {
+    $("#filters").removeClass("active")
+  } else {
+    $("#filters").addClass("active")
+  }
+  
+})
 
-    setTimeout(function(){
-    $('.student').eq(r).addClass("active");
-    },500)
-},2000);
+// //random hover
+// let hoverStudents = setInterval(function(){
+//   $(".student.active").removeClass("active")
+//     r = Math.floor(Math.random()*$(".student").length)
+
+//     setTimeout(function(){
+//     $('.student').eq(r).addClass("active");
+//     },500)
+// },2000);
+
+
+// $(document).on("mouseover", ".student", function(){
+//   clearInterval(hoverStudents)
+// })
+// $(document).on("mouseout", ".student", function(){
+//   //random hover
+// hoverStudents = setInterval(function(){
+//   $(".student.active").removeClass("active")
+//     r = Math.floor(Math.random()*$(".student").length)
+
+//     setTimeout(function(){
+//     $('.student').eq(r).addClass("active");
+//     },500)
+// },2000);
+// })
 
 fetch('https://2021.ocadu.gd/feed/tags')
 .then(response => response.json())
   .then(p => {
     for (k=0;k<p.length;k++) {
       /* html */
-      $("#tags-filter").append(`<option class="tag-filter" data-link='t_${p[k].tid[0].value}'>${p[k].name[0].value}</option>`);      
+      $("#tags-filter").append(`<li class="tag-filter" data-link='t_${p[k].tid[0].value}'>${p[k].name[0].value}</li>`);      
     }
     
   });
@@ -40,7 +67,7 @@ fetch(url)
         
         /* html */
         $("#students-filter").append(`
-          <option class="student-filter" data-link="${p[i].nid}">${p[i].field_last_name}</option>
+          <li class="student-filter" data-link="${p[i].nid}"><div class='initials'>${intialize(p[i].field_last_name)}</div> ${p[i].field_last_name}</li>
         `)
         
         /* html */
@@ -61,17 +88,19 @@ fetch(url)
   //### FILTERS
 
   //TAGS
-  $(document).on("change","#tags-filter",function(){
-    resetToHome();
-    filter = "."+$("#tags-filter option:selected" ).data("link");
+  $(document).on("click",".tag-filter",function(){
+    //resetToHome();
+    filter = "."+$(this).data("link");
+    $(".tag-filter").removeClass("active");
+    $(this).addClass("active")
     $(filter).show(200);
     $(".student").not(filter).hide(200);        
   })
 
   //STUDENTS
-  $(document).on("change","#students-filter",function(){
+  $(document).on("click",".student-filter",function(){
     resetToHome();
-    filter = "#student-"+$("#students-filter option:selected" ).data("link");
+    filter = "#student-"+$(this).data("link");
     $(filter).click();
   })
 
@@ -258,6 +287,7 @@ $(document).on("click",".student", function(){
     function resetToHome() {
       $("title").text("Virtual by Necessity | OCADU Graphic Design 2021 Graduates")
       shuffle();
+      $("#filters").removeClass("active");
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
       $(".student").show(200)

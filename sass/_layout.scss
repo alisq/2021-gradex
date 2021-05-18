@@ -10,7 +10,7 @@
     border-bottom:1px solid #000;
     z-index:100;
     display:grid;
-    grid-template-columns: 5fr 3fr;
+    grid-template-columns: 6fr 4fr;
 
     &__menu {
         width:100%;
@@ -40,11 +40,11 @@
 
     &.selected {
         position: fixed;
-        grid-template-columns: repeat(44, 1fr);
+        grid-template-columns: repeat(43, 1fr);
         bottom: 0;
         // top: 38.25vw;
         z-index: 11;
-        width: calc(12.5vw * 44);
+        width: calc(10vw * 43);
     }
 
 }
@@ -54,7 +54,7 @@
     margin-top:3.125vw;
     padding-bottom: calc(6.25vw + 1em);
      display:grid;
-    grid-template-columns:5fr 3fr;
+    grid-template-columns:6fr 4fr;
 
 
 
@@ -102,6 +102,11 @@ top: 3.5vw;
         transition:all 0.2s;
         pointer-events:none;
         
+    }
+
+    &.selected .initials {
+        width:6rem;
+        height:6rem;
     }
 
     & .profile-img {
@@ -205,12 +210,26 @@ top: 3.5vw;
 
 //this is temporary
 #filters {
-    position:fixed;
-    z-index:100;
-    // background:white;
-    top:20px; right:20px;
-    // padding:1em;
+    position: absolute;
+    z-index: 100;
+    background: white;
+    border-left: 1px solid #000;
+    width: 20vw;
+    top: 3.125vw;
+    right: 0;
+    min-height: 96.875vw;
+    opacity:0;
+    pointer-events: none;
+    transition:all 0.2s;
+
+    
 } 
+
+#filters.active {
+    opacity:1;
+    pointer-events: all;
+
+}
 
 
 @media (max-width:1000px) {
@@ -221,7 +240,7 @@ top: 3.5vw;
         
         
         display: block;
-        grid-template-columns: 5fr 3fr;
+        grid-template-columns: 6fr 4fr;
         text-align:center
 
     }
