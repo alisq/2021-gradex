@@ -120,6 +120,13 @@ $(document).on("click",".student", function(){
       window.history.pushState("https://2021.ocadu.gd", pageTitle)
       window.location.hash="student/"+nid
     
+      instructor = "";
+      
+      console.log("dd"+p[0].field_workshop_)
+      if ((p[0].field_workshop_ != "Did not take Workshop") && (p[0].field_workshop_ != "")) {
+        instructor = `<p><label>workshop instructor:</label> ${p[0].field_workshop_}</p>`
+      }
+      
           
       $("<div id='student'></div>")
       /* html */  
@@ -133,7 +140,7 @@ $(document).on("click",".student", function(){
           <p>${p[0].body}</p>
           <p>${p[0].field_project_description}</p>
           <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
-          <p><label>workshop instructor:</label> ${[0].field_workshop_}</p>
+          ${instructor}
           
         </div>
         <div class="student--right">
