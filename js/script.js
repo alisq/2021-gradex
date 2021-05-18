@@ -122,7 +122,6 @@ $(document).on("click",".student", function(){
     
       instructor = "";
       
-      console.log("dd"+p[0].field_workshop_)
       if ((p[0].field_workshop_ != "Did not take Workshop") && (p[0].field_workshop_ != "")) {
         instructor = `<p><label>workshop instructor:</label> ${p[0].field_workshop_}</p>`
       }
