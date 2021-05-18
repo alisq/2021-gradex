@@ -155,6 +155,25 @@ $(document).on("click",".student", function(){
       if ((p[0].field_workshop_ != "Did not take Workshop") && (p[0].field_workshop_ != "")) {
         instructor = `<p><label>workshop instructor:</label> ${p[0].field_workshop_}</p>`
       }
+
+      tags = "";
+      if (p[0].field_tags != "") {
+        for (l=0;l<p[0].field_tags.split(", ").length;l++) {
+          /* html */
+          tags+=`
+          <li class="tag-filter" data-link="${p[0].field_tags_1.split(", ")[l]}">${p[0].field_tags.split(", ")[l]}</li>          
+          `
+        }
+      }
+
+      if (p[0].field_additional_ != "") {
+        for (l=0;l<p[0].field_additional_.split(", ").length;l++) {
+          /* html */
+          tags+=`
+          <li class="tag-filter" data-link="${p[0].field_additional_1.split(", ")[l]}">${p[0].field_additional_.split(", ")[l]}</li>          
+          `
+        }
+      }
       
           
       $("<div id='student'></div>")
@@ -168,7 +187,7 @@ $(document).on("click",".student", function(){
           </div>
           <p>${p[0].body}</p>
           <p>${p[0].field_project_description}</p>
-          <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
+          <p><label>tags:</label> ${tags}</p>
           ${instructor}
           
         </div>
