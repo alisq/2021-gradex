@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 .student--right .stick {
   position: -webkit-sticky;
   position: sticky;
-  top: 0; }
+  top: 3.5vw; }
 
 .student {
   height: 12.5vw;
@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s;
+    transition: all 0.2s;
     pointer-events: none; }
   .student .profile-img {
     width: 100%;
@@ -137,13 +137,16 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1; }
   .student.active .thumb-img,
   .student:hover .thumb-img {
-    transition-delay: 1s;
+    transition-delay: 0.75s;
     opacity: 1; }
 
 .gallery ul {
   list-style-type: none; }
 
 .gallery ul li {
+  width: 100%; }
+
+.gallery img {
   width: 100%; }
 
 .project-vid {
@@ -181,7 +184,8 @@ a:visited {
   text-decoration: underline; }
 
 nav li {
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 3rem; }
 
 nav li:hover,
 a:hover {

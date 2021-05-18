@@ -15,7 +15,7 @@ setInterval(function(){
 
     setTimeout(function(){
     $('.student').eq(r).addClass("active");
-    },1000)
+    },500)
 },2000);
 
 fetch('https://2021.ocadu.gd/feed/tags')
@@ -119,7 +119,7 @@ $(document).on("click",".student", function(){
     $("title").text(pageTitle)
       window.history.pushState("https://2021.ocadu.gd", pageTitle)
       window.location.hash="student/"+nid
-
+    
           
       $("<div id='student'></div>")
       /* html */  
@@ -132,8 +132,8 @@ $(document).on("click",".student", function(){
           </div>
           <p>${p[0].body}</p>
           <p>${p[0].field_project_description}</p>
-          <label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}
-          <label>workshop instructor:</label> ${[0].field_workshop_}
+          <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
+          <p><label>workshop instructor:</label> ${[0].field_workshop_}</p>
           
         </div>
         <div class="student--right">
@@ -141,7 +141,12 @@ $(document).on("click",".student", function(){
           <h2>${p[0].field_given_names}<br />${p[0].field_last_name}</h2>
           <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
           <p>${p[0].field_short_biography}</p>
-          <p>${p[0].field_email}</p>
+          <p><a href="mailto:${p[0].field_email}">${p[0].field_email}</a></p>
+          <p>${p[0].field_portfolio_site_link}</p>
+          <p>${p[0].field_behance_link}</p>
+          <p>${p[0].field_instagram_link}</p>
+          <p>${p[0].field_linked_in_link}</p>
+          
           </div>
           
         </div>
@@ -245,6 +250,7 @@ $(document).on("click",".student", function(){
 
 
     function resetToHome() {
+      $("title").text("Virtual by Necessity | OCADU Graphic Design 2021 Graduates")
       shuffle();
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
