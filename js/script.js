@@ -1,7 +1,4 @@
 
-$('#marquee1').marquee({ speed:4 });
-$('#marquee2').marquee({ speed:2 });
-$('#marquee3').marquee({ speed:3 });
 
 currentURL = window.location.hash.replace("#","").split("/"); 
 
@@ -122,7 +119,7 @@ $(document).on("click",".student", function(){
   nid = $(this).attr("id").replace("student-","");
 
   
-  $("#site-title, .marquee").delay(200).fadeOut(200);
+  $("#site-title").delay(200).fadeOut(200);
 
   $("#student").fadeOut(200).delay(200).remove();
 
@@ -192,7 +189,7 @@ $(document).on("click",".student", function(){
           </div>
           <p>${p[0].body}</p>
           <p>${p[0].field_project_description}</p>
-          <p><label>tags:</label> ${tags}</p>
+          <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
           ${instructor}
           
         </div>
@@ -316,7 +313,7 @@ $(document).on("click",".student", function(){
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
       $(".student").show(200)
-      $("#site-title, .marquee").fadeIn(200);
+      $("#site-title").fadeIn(200);
       $("#student").fadeOut(200).delay(300).remove();
       $("#students").delay(300).removeClass("selected");
       window.location.hash = ""
