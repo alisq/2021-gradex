@@ -92,7 +92,7 @@ fetch(url)
         
         /* html */
         $("#students").append(`
-          <div class='student ${p[i].field_additional_} ${p[i].field_tags}' id='student-${p[i].nid}'>
+          <div class='student s ${p[i].field_additional_} ${p[i].field_tags}' id='student-${p[i].nid}'>
             <div class='initials'>${intialize(p[i].field_last_name)}</div>
             <div class='profile-img' style='background-image:url(https://2021.ocadu.gd${p[i].field_profile_image})'></div>
             <div class='thumb-img' style='background-image:url(https://2021.ocadu.gd${p[i].field_thumbnail_image})'></div>
