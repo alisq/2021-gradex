@@ -274,7 +274,7 @@ top: 3.5vw;
 
     #students {
         margin-top: 0;
-        
+        transition:all 0.3s;
         grid-template-columns: repeat(2, 1fr);
         
     }

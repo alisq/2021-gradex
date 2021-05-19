@@ -11,12 +11,14 @@ window.addEventListener("hashchange", function(e) {
 
 
 $("#menu-filter").click(function(){
-  resetToHome();
+  
 
   if ($("body").hasClass("filter-active")) {
+    resetToHome();
     $("body").removeClass("filter-active")
     window.location.hash = ""
   } else {
+    resetToHome();
     $("body").addClass("filter-active")
     window.location.hash = "filters"
   }
@@ -24,12 +26,14 @@ $("#menu-filter").click(function(){
 })
 
 $("#menu-about").click(function(){
-  resetToHome();
+  
 
   if ($("body").hasClass("about-active")) {
+    resetToHome();
     $("body").removeClass("about-active")
     window.location.hash = ""
   } else {
+    resetToHome();
     $("body").addClass("about-active")
     window.location.hash = "about"
   }

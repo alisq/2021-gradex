@@ -212,6 +212,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center; }
   #students {
     margin-top: 0;
+    transition: all 0.3s;
     grid-template-columns: repeat(2, 1fr); }
   .student {
     height: 30vw; } }
