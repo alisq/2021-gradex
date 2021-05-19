@@ -227,22 +227,26 @@ top: 3.5vw;
 
 
 //this is temporary
-#filters {
-    position: absolute;
+#filters,
+#about {
+    padding:1em;
+    position: fixed;
     z-index: 100;
     background: white;
     border-left: 1px solid #000;
     width: 20vw;
+    height:96.875vh;
     top: 3.125vw;
     right: 0;
-    min-height: 96.875vw;
     opacity:0;
     pointer-events: none;
     transition:all 0.2s;
+    overflow-y:scroll;
+    padding-bottom:2em;
 
     
 } 
-
+#about.active,
 #filters.active {
     opacity:1;
     pointer-events: all;

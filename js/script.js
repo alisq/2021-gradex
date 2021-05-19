@@ -12,14 +12,32 @@ window.addEventListener("hashchange", function(e) {
 
 $("#menu-filter").click(function(){
   resetToHome();
+  $("#menu-about").removeClass("active")
   $(this).toggleClass("active")
   if ($("#filters").hasClass("active")) {
     $("#filters").removeClass("active")
+    window.location.hash = ""
   } else {
     $("#filters").addClass("active")
+    window.location.hash = "filters"
   }
   
 })
+
+$("#menu-about").click(function(){
+  resetToHome();
+  $("#menu-filter").removeClass("active")
+  $(this).toggleClass("active")
+  if ($("#about").hasClass("active")) {
+    $("#about").removeClass("active")
+    window.location.hash = ""
+  } else {
+    $("#about").addClass("active")
+    window.location.hash = "about"
+  }
+  
+})
+
 
 // //random hover
 // let hoverStudents = setInterval(function(){
@@ -69,7 +87,7 @@ fetch(url)
         
         /* html */
         $("#students-filter").append(`
-          <li class="student-filter ${p[i].field_additional_} ${p[i].field_tags}" data-link="${p[i].nid}"><div class='initials'>${intialize(p[i].field_last_name)}</div> ${p[i].field_last_name}</li>
+          <li class="student-filter s ${p[i].field_additional_} ${p[i].field_tags}" data-link="${p[i].nid}"><div class='initials'>${intialize(p[i].field_last_name)}</div> ${p[i].field_last_name}</li>
         `)
         
         /* html */
