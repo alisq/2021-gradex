@@ -1,4 +1,22 @@
+//marquee
+.marquee {
+    width: 100vw;
+    overflow: hidden;
+    /* border: 1px solid #ccc; */
+    /* background: #ccc; */
+    position: fixed;
+    z-index: 9999;
+    width: 100vw;
+    font-size:19.5vw;
+    pointer-events:none;
+    z-index:15;
+    text-transform:uppercase;
+    line-height:19.5vw;
+}
 
+#marquee1 { top: 0}
+#marquee2 { top: 33vh}
+#marquee3 { top: 66vh}
 //menu 
 
 #navigation {

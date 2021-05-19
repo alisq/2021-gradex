@@ -1,3 +1,8 @@
+
+$('#marquee1').marquee({ speed:4 });
+$('#marquee2').marquee({ speed:2 });
+$('#marquee3').marquee({ speed:3 });
+
 currentURL = window.location.hash.replace("#","").split("/"); 
 
 route(currentURL)
@@ -117,7 +122,7 @@ $(document).on("click",".student", function(){
   nid = $(this).attr("id").replace("student-","");
 
   
-  $("#site-title").delay(200).fadeOut(200);
+  $("#site-title, .marquee").delay(200).fadeOut(200);
 
   $("#student").fadeOut(200).delay(200).remove();
 
@@ -165,12 +170,12 @@ $(document).on("click",".student", function(){
           `
         }
       }
-
-      if (p[0].field_additional_ != "") {
+      console.log(p[0].field_additional__1)
+      if (p[0].field_additional_ != undefined) {
         for (l=0;l<p[0].field_additional_.split(", ").length;l++) {
           /* html */
           tags+=`
-          <li class="tag-filter" data-link="${p[0].field_additional_1.split(", ")[l]}">${p[0].field_additional_.split(", ")[l]}</li>          
+          <li class="tag-filter" data-link="${p[0].field_additional__1.split(", ")[l]}">${p[0].field_additional_.split(", ")[l]}</li>          
           `
         }
       }
@@ -311,7 +316,7 @@ $(document).on("click",".student", function(){
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
       $(".student").show(200)
-      $("#site-title").fadeIn(200);
+      $("#site-title, .marquee").fadeIn(200);
       $("#student").fadeOut(200).delay(300).remove();
       $("#students").delay(300).removeClass("selected");
       window.location.hash = ""
