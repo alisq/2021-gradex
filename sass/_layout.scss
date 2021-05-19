@@ -246,11 +246,16 @@ top: 3.5vw;
 
     
 } 
-#about.active,
-#filters.active {
+.about-active #about,
+.filter-active #filters {
     opacity:1;
     pointer-events: all;
 
+}
+
+.about-active #students,
+.filter-active #students {
+    width:80vw;
 }
 
 

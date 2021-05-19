@@ -12,13 +12,12 @@ window.addEventListener("hashchange", function(e) {
 
 $("#menu-filter").click(function(){
   resetToHome();
-  $("#menu-about").removeClass("active")
-  $(this).toggleClass("active")
-  if ($("#filters").hasClass("active")) {
-    $("#filters").removeClass("active")
+
+  if ($("body").hasClass("filter-active")) {
+    $("body").removeClass("filter-active")
     window.location.hash = ""
   } else {
-    $("#filters").addClass("active")
+    $("body").addClass("filter-active")
     window.location.hash = "filters"
   }
   
@@ -26,13 +25,12 @@ $("#menu-filter").click(function(){
 
 $("#menu-about").click(function(){
   resetToHome();
-  $("#menu-filter").removeClass("active")
-  $(this).toggleClass("active")
-  if ($("#about").hasClass("active")) {
-    $("#about").removeClass("active")
+
+  if ($("body").hasClass("about-active")) {
+    $("body").removeClass("about-active")
     window.location.hash = ""
   } else {
-    $("#about").addClass("active")
+    $("body").addClass("about-active")
     window.location.hash = "about"
   }
   
@@ -296,6 +294,14 @@ $(document).on("click",".student", function(){
       setTimeout(function(){
         $("#student-"+currentURL[1]).click()
       },500)
+    } else if (currentURL[0] == "about") {
+      setTimeout(function(){
+        $("#menu-about").click()
+      },500)
+    } else if (currentURL[0] == "filters") {
+      setTimeout(function(){
+        $("#menu-filter").click()
+      },500)
     }
     }
 
@@ -327,7 +333,8 @@ $(document).on("click",".student", function(){
     function resetToHome() {
       $("title").text("Virtual by Necessity | OCADU Graphic Design 2021 Graduates")
       shuffle();
-      $("#filters").removeClass("active");
+      $("body").removeClass("filter-active about-active")
+      $("#filters, #about").removeClass("active");
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
       $(".student").show(200)

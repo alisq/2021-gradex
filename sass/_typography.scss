@@ -26,14 +26,15 @@ nav li {
     font-size:3rem;
 }
 
-
-nav li.active,
+.filter-active #menu-filter,
+.about-active #menu-about,
 nav li:hover,
 a:hover {
     color:$color-green;
-    text-decoration:none;
-    
+    text-decoration:none;    
 }
+
+
 
 h1 {
     height:100%;

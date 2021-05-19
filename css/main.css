@@ -194,10 +194,14 @@ h1, h2, h3, h4, h5, h6 {
   overflow-y: scroll;
   padding-bottom: 2em; }
 
-#about.active,
-#filters.active {
+.about-active #about,
+.filter-active #filters {
   opacity: 1;
   pointer-events: all; }
+
+.about-active #students,
+.filter-active #students {
+  width: 80vw; }
 
 @media (max-width: 1000px) {
   #navigation {
@@ -228,7 +232,8 @@ nav li {
   cursor: pointer;
   font-size: 3rem; }
 
-nav li.active,
+.filter-active #menu-filter,
+.about-active #menu-about,
 nav li:hover,
 a:hover {
   color: #CCFF00;
