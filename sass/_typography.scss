@@ -54,8 +54,16 @@ h1 {
     line-height: 1em;
     top: 54%;
     left:50%;
-    transform:translate(-50%,-50%)
+    transform:translate(-50%,-50%);
+    filter:blur(10rem);
+    opacity:0.2;
+    transition:all 0.3s;
 }
+#site-title.active {
+    opacity:1;
+    filter:blur(1rem);
+}
+
 
 h2 {
     min-height:11rem;

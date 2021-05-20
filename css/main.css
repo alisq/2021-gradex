@@ -71,14 +71,16 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     grid-template-columns: repeat(43, 1fr);
     bottom: 0;
-    z-index: 16;
+    z-index: 22;
     width: calc(10vw * 43); }
 
 #student {
   margin-top: 3.125vw;
   padding-bottom: calc(6.25vw + 1em);
   display: grid;
-  grid-template-columns: 6fr 4fr; }
+  grid-template-columns: 6fr 4fr;
+  position: relative;
+  z-index: 20; }
 
 .student--left,
 .student--right {
@@ -257,7 +259,14 @@ h1 {
   line-height: 1em;
   top: 54%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  filter: blur(10rem);
+  opacity: 0.2;
+  transition: all 0.3s; }
+
+#site-title.active {
+  opacity: 1;
+  filter: blur(1rem); }
 
 h2 {
   min-height: 11rem;

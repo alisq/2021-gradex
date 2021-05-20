@@ -139,7 +139,7 @@ $(document).on("click",".student", function(){
   nid = $(this).attr("id").replace("student-","");
 
   
-  $("#site-title").delay(200).fadeOut(200);
+  $("#site-title").delay(200).removeClass("active");
 
   $("#student").fadeOut(200).delay(200).remove();
 
@@ -342,7 +342,7 @@ $(document).on("click",".student", function(){
       $("#tags-filter option[value=all]").attr('selected', 'selected');
       $("#students-filter option[value=all]").attr('selected', 'selected');
       $(".student").show(200)
-      $("#site-title").fadeIn(200);
+      $("#site-title").addClass("active");
       $("#student").fadeOut(200).delay(300).remove();
       $("#students").delay(300).removeClass("selected");
       window.location.hash = ""

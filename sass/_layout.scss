@@ -61,7 +61,7 @@
         grid-template-columns: repeat(43, 1fr);
         bottom: 0;
         // top: 38.25vw;
-        z-index: 16;
+        z-index: 22;
         width: calc(10vw * 43);
     }
 
@@ -73,7 +73,8 @@
     padding-bottom: calc(6.25vw + 1em);
      display:grid;
     grid-template-columns:6fr 4fr;
-
+    position:relative;
+    z-index:20;
 
 
 }
