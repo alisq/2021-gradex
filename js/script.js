@@ -40,8 +40,45 @@ $("#menu-about").click(function(){
   
 })
 
+const phrases = [
+"You're on mute!",
+"Can you see my screen?",
+"How are you holding up?",
+"In these unprecedented times...",
+"Quick check-in up top",
+"Is it moving on your screen? Because we're not seeing anything",
+"I think they dropped",
+"You cut out for a second",
+"Oh, you go ahead",
+"Is there supposed to be audio?",
+"Internet's bad, turning off video",
+"Someone's feeding back",
+"Do you think you could use headphones?",
+"Can I get a show of hands?",
+"Is your hand still up?",
+"I can't share my screen",
+"Do you have co-host permissions?"
+]
 
-$(".marquee").marquee()
+i = 0;
+
+i = Math.floor(Math.random() * phrases.length)
+
+$('.marquee')
+  .text(phrases[i])
+  .marquee({
+	//duration in milliseconds of the marquee
+	duration: 15000,
+	//gap in pixels between the tickers
+	gap: 500,
+	//time in milliseconds before the marquee will start animating
+	delayBeforeStart: 0,
+	//'left' or 'right'
+	direction: 'left',
+	//true or false - should the marquee be duplicated to show an effect of continues flow
+	duplicated: true
+})
+
 
 // //random hover
 // let hoverStudents = setInterval(function(){
@@ -338,7 +375,7 @@ $(document).on("click",".student", function(){
 
     function resetToHome() {
       $("title").text("Virtual by Necessity | OCADU Graphic Design 2021 Graduates")
-      shuffle();
+      //shuffle();
       $("body").removeClass("filter-active about-active")
       $("#filters, #about").removeClass("active");
       $("#tags-filter option[value=all]").attr('selected', 'selected');
