@@ -41,6 +41,8 @@ $("#menu-about").click(function(){
 })
 
 
+$(".marquee").marquee()
+
 // //random hover
 // let hoverStudents = setInterval(function(){
 //   $(".student.active").removeClass("active")
