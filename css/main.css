@@ -214,6 +214,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "suisse";
   src: url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Regular-WebS.woff2") format("woff2"), url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Regular-WebS.woff") format("woff"), url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Regular-WebS.eot") format("eot"), url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Regular-WebS.svg") format("svg"), url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Regular-WebS.ttf") format("ttf"); }
 
+@font-face {
+  font-family: "suisse";
+  src: url("https://alisq.github.io/2021-gradex/fonts/SuisseIntl-Light-WebM.woff") format("woff");
+  font-weight: 100; }
+
 body {
   font-family: 'suisse'; }
 
@@ -264,6 +269,9 @@ h2 {
   font-size: 6rem;
   text-transform: uppercase;
   line-height: 0.85em; }
+
+h2.student-name {
+  font-weight: 100; }
 
 .image-field-caption {
   font-size: 1.5rem;

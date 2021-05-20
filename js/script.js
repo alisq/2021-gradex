@@ -241,7 +241,8 @@ $(document).on("click",".student", function(){
       /* html */  
       .append(`
         <div class="student--left">
-          <h2>${p[0].title}</h2>
+          <h2 class='student-name'>${p[0].title}</h2>
+          
           <div class='gallery'>
             ${vidz}
             ${p[0].field_project_images.replaceAll("\/sites","https:\/\/2021.ocadu.gd\/sites")}
