@@ -5,7 +5,9 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    
 }
+
 
 html {
     font-size:62.5%;
@@ -13,6 +15,7 @@ html {
 
 body {
     font-size:2rem;
+    cursor:url('/img/regular-cursor.png') 2 2, default;
 }  
 
 img {
