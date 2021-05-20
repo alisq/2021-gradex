@@ -261,7 +261,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   filter: blur(10rem);
-  opacity: 0.2;
+  opacity: 0.5;
   transition: all 0.3s; }
 
 #site-title.active {
