@@ -161,3 +161,7 @@ p {
         background: $color-green;
     }
 }
+
+h1, a {
+    transition:color 0.2s;
+}
