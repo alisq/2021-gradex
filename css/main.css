@@ -253,6 +253,9 @@ h1 {
   padding-left: 1rem;
   cursor: url("../img/hover-cursor.png") 2 2, pointer; }
 
+h1:hover {
+  color: #CCFF00; }
+
 #site-title {
   position: fixed;
   z-index: 15;

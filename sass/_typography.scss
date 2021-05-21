@@ -52,6 +52,10 @@ h1 {
     cursor:url('../img/hover-cursor.png') 2 2, pointer;
 }
 
+h1:hover {
+    color:$color-green;
+}
+
 
 #site-title {
     position:fixed;
