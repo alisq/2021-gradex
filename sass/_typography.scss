@@ -85,6 +85,8 @@ h2.student-name {
     font-weight:100;
 }
 
+
+
 .image-field-caption {
     font-size:1.5rem;
     margin-bottom:2rem;
@@ -93,6 +95,15 @@ h2.student-name {
 
 p {
     margin-bottom:0.5em;
+}
+
+.social-links {
+    font-size:1.5em;
+}
+
+.social-link {
+    display:inline-block;
+    padding-right:0.5em;
 }
 
 #tags-filter,

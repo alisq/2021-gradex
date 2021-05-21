@@ -246,7 +246,12 @@ $(document).on("click",".student", function(){
         }
       }
       
-          
+      portfolioURI = p[0].field_portfolio_site_link;
+      portfolioLabel = p[0].field_portfolio_site_link
+          .replace("http://www.","")
+          .replace("https://www.","")
+          .replace("http://","")
+          .replace("https://","");
       $("<div id='student'></div>")
       /* html */  
       .append(`
@@ -262,6 +267,7 @@ $(document).on("click",".student", function(){
           <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
           ${instructor}
           
+          
         </div>
         <div class="student--right">
         <div class='stick'>
@@ -269,11 +275,12 @@ $(document).on("click",".student", function(){
           <p>${p[0].field_profile_image.replace("\/sites","https:\/\/2021.ocadu.gd\/sites")}</p>
           <p>${p[0].field_short_biography}</p>
           <p><a href="mailto:${p[0].field_email}">${p[0].field_email}</a></p>
-          <p>${p[0].field_portfolio_site_link}</p>
-          <p>${p[0].field_behance_link}</p>
-          <p>${p[0].field_instagram_link}</p>
-          <p>${p[0].field_linked_in_link}</p>
-          
+          <p><a href="${portfolioURI}" target="_blank">${portfolioLabel}</a></p>
+          <div class='social-links'>
+            <div class='social-link'>${p[0].field_instagram_link}</div>
+            <div class='social-link'>${p[0].field_linked_in_link}</div>
+            <div class='social-link'>${p[0].field_behance_link}</div>
+            </div>
           </div>
           
         </div>
