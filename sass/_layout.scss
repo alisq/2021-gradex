@@ -103,7 +103,7 @@ top: 3.5vw;
     height: 12.5vw;
     position:relative;
     box-shadow:0 0 0 1px #000;
-    cursor:url('/img/hover-cursor.png') 2 2, pointer!important;
+    cursor:url('../img/hover-cursor.png') 2 2, pointer!important;
     background:#FFF;
 
     .selected & {

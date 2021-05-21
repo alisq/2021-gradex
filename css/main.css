@@ -10,7 +10,7 @@ html {
 
 body {
   font-size: 2rem;
-  cursor: url("/img/regular-cursor.png") 2 2, default; }
+  cursor: url("../img/regular-cursor.png") 2 2, default; }
 
 img {
   max-width: 100%;
@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 12.5vw;
   position: relative;
   box-shadow: 0 0 0 1px #000;
-  cursor: url("/img/hover-cursor.png") 2 2, pointer !important;
+  cursor: url("../img/hover-cursor.png") 2 2, pointer !important;
   background: #FFF; }
   .selected .student {
     height: 6.25vw; }
@@ -233,10 +233,10 @@ a:link,
 a:visited {
   color: #000;
   text-decoration: underline;
-  cursor: url("/img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
 
 nav li {
-  cursor: url("/img/hover-cursor.png") 2 2, pointer;
+  cursor: url("../img/hover-cursor.png") 2 2, pointer;
   font-size: 3rem; }
 
 .filter-active #menu-filter,
@@ -251,7 +251,7 @@ h1 {
   display: flex;
   align-items: center;
   padding-left: 1rem;
-  cursor: url("/img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
 
 #site-title {
   position: fixed;
@@ -304,7 +304,7 @@ p {
   border: 1px solid #000;
   margin: 0.15em;
   padding: 0.2em;
-  cursor: url("/img/hover-cursor.png") 2 2, pointer;
+  cursor: url("../img/hover-cursor.png") 2 2, pointer;
   font-size: 0.75em; }
 
 .tag-filter:hover,
@@ -312,7 +312,7 @@ p {
   background: #CCFF00; }
 
 .student-filter {
-  cursor: url("/img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
   .student-filter .initials {
     border: 2px solid #000;
     display: inline-flex;
