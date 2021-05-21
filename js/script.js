@@ -1,7 +1,8 @@
 
 
 currentURL = window.location.hash.replace("#","").split("/"); 
-
+let $carousel;
+let isFlickity = false;
 route(currentURL)
 
 
@@ -182,7 +183,16 @@ $(document).on("click",".student", function(){
 
   $("#student").fadeOut(200).delay(200).remove();
 
-  $("#students").addClass("selected")
+  $carousel = $("#students")
+    .addClass("selected")
+    .flickity({
+      // options
+      cellAlign: 'left',
+      wrapAround:true,
+      contain: true
+    });
+
+    isFlickity = true;
 
   window.onpopstate = function(event) {
   console.log(event)
@@ -375,6 +385,7 @@ $(document).on("click",".student", function(){
 
 
     function resetToHome() {
+      if (isFlickity==true) { $carousel.flickity('destroy')};
       $("title").text("Virtual by Necessity | OCADU Graphic Design 2021 Graduates")
       //shuffle();
       $("body").removeClass("filter-active about-active")

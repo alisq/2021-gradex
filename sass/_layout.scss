@@ -55,11 +55,19 @@
 
     &.selected {
         position: fixed;
-        grid-template-columns: repeat(43, 1fr);
+        //grid-template-columns: repeat(43, 1fr);
         bottom: 0;
         // top: 38.25vw;
         z-index: 22;
-        width: calc(10vw * 43);
+        //width: calc(10vw * 43);
+        display:block;
+        width:100vw;
+        border-top:1px solid #000;
+
+        & .student {
+            width:10vw;
+            height: 5.5vw;
+        }
     }
 
 }
