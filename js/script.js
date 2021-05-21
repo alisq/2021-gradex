@@ -143,6 +143,7 @@ fetch(url)
 
          
       }
+      shuffle();
     
   });
 
