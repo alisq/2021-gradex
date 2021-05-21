@@ -184,6 +184,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   pointer-events: none;
   transition: all 0.2s;
+  overflow-y: scroll; 
   padding-bottom: 2em; }
 
 .about-active #about,
