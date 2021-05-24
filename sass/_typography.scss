@@ -13,9 +13,16 @@
   }
 
 
+
+
   
   body {
       font-family: 'suisse';
+  }
+
+  ::selection {
+    color: black;
+    background: $color-green;
   }
 
 
