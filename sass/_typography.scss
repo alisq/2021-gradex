@@ -138,6 +138,13 @@ p {
     background:$color-green;
 }
 
+.student--left .tag-filter {
+    cursor:url('../img/regular-cursor.png') 2 2, pointer;
+}
+
+.student--left .tag-filter:hover {
+    background:inherit;
+}
 .student-filter {
     cursor:url('../img/hover-cursor.png') 2 2, pointer;
 

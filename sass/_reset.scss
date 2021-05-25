@@ -29,3 +29,54 @@ h1, h2, h3, h4, h5, h6 {
     // font-size:1em;
     font-weight:400;
 }
+
+/* flickity buttons */
+
+// .flickity-prev-next-button {
+//     width: calc(10vw - 1px);
+//     border-radius: 0;
+//     background: white;
+//     height: 5.5vw;
+
+//     &.previous { left: 0; }
+//     &.next { right: 0; }
+
+//     & .flickity-button-icon {
+    
+//         left: 40%;
+//         top: 40%;
+//         width: 30%;
+//         height: 30%;
+//     }
+
+// }
+
+
+.flickity-prev-next-button {
+    // width: calc(10vw - 1px);
+    // border-radius: 0;
+    // background: white;
+    // height: 5.5vw;
+    width:8rem;
+    height:8rem;
+    border:1px solid #000;
+    background:white;
+    transition:all 0.2s;
+
+    &:hover { background:$color-green; }
+
+    &.previous { left: 2.9vw; }
+    &.next { right: 2.9vw; } 
+
+    & .flickity-button-icon {
+    
+        left: 30%;
+        top: 30%;
+        width: 40%;
+        height: 40%;
+    }
+
+}
+
+
+

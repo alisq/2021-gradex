@@ -151,7 +151,7 @@ fetch(url)
   //### FILTERS
 
   //TAGS
-  $(document).on("click",".tag-filter",function(){
+  $(document).on("click","#filters .tag-filter",function(){
     //resetToHome();
     filter = "."+$(this).data("link");
     $(".tag-filter").removeClass("active");
@@ -265,7 +265,8 @@ $(document).on("click",".student", function(){
           </div>
           <p>${p[0].body}</p>
           <p>${p[0].field_project_description}</p>
-          <p><label>tags:</label> ${p[0].field_tags} ${p[0].field_additional_}</p>
+          
+          <p>${tags.replace('<li class=\"tag-filter\" data-link=\"\"></li>','')}</p>
           ${instructor}
           
           

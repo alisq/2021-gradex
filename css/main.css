@@ -20,6 +20,25 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
+/* flickity buttons */
+.flickity-prev-next-button {
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid #000;
+  background: white;
+  transition: all 0.2s; }
+  .flickity-prev-next-button:hover {
+    background: #CCFF00; }
+  .flickity-prev-next-button.previous {
+    left: 2.9vw; }
+  .flickity-prev-next-button.next {
+    right: 2.9vw; }
+  .flickity-prev-next-button .flickity-button-icon {
+    left: 30%;
+    top: 30%;
+    width: 40%;
+    height: 40%; }
+
 .marquee {
   width: calc(100% + 4rem);
   transform: translateX(-2rem);
@@ -317,6 +336,12 @@ p {
 .tag-filter:hover,
 .tag-filter.active {
   background: #CCFF00; }
+
+.student--left .tag-filter {
+  cursor: url("../img/regular-cursor.png") 2 2, pointer; }
+
+.student--left .tag-filter:hover {
+  background: inherit; }
 
 .student-filter {
   cursor: url("../img/hover-cursor.png") 2 2, pointer; }
