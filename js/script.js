@@ -1,5 +1,5 @@
 
-
+let marquee;
 currentURL = window.location.hash.replace("#","").split("/"); 
 let $carousel;
 let isFlickity = false;
@@ -65,20 +65,55 @@ i = 0;
 
 i = Math.floor(Math.random() * phrases.length)
 
-$('.marquee')
+mVars = {
+  
+    duration:5000,
+    gap:100
+  
+}
+
+marquee = $('.marquee')
   .text(phrases[i])
-  .marquee({
-	//duration in milliseconds of the marquee
-	duration: 15000,
-	//gap in pixels between the tickers
-	gap: 500,
-	//time in milliseconds before the marquee will start animating
-	delayBeforeStart: 0,
-	//'left' or 'right'
-	direction: 'left',
-	//true or false - should the marquee be duplicated to show an effect of continues flow
-	duplicated: true
-})
+  .bind('finished', function(){
+		//Change text to something else after first loop finishes
+		marqueeRestart(mVars)
+
+		
+	})
+	.marquee(mVars);
+
+
+
+
+  function marqueeRestart(mVars) {
+    i = Math.floor(Math.random() * phrases.length)
+    marquee
+      .marquee('destroy')
+      .html(phrases[i])
+      .marquee(mVars)
+      .bind('finished', function(){
+        //Change text to something else after first loop finishes
+        marqueeRestart(mVars)
+    
+        
+      })
+  }
+//   .bind('finished', function(){
+//     console.log("fff")
+//   })
+  
+//   .marquee({
+// 	//duration in milliseconds of the marquee
+// 	duration: 5000,
+// 	//gap in pixels between the tickers
+// 	gap: 500,
+// 	//time in milliseconds before the marquee will start animating
+// 	delayBeforeStart: 0,
+// 	//'left' or 'right'
+// 	direction: 'left',
+// 	//true or false - should the marquee be duplicated to show an effect of continues flow
+// 	duplicated: true
+// })
 
 
 // //random hover
