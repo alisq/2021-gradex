@@ -12,14 +12,14 @@ window.addEventListener("hashchange", function(e) {
 
 
 $("#menu-filter").click(function(){
-  
+  $("body").removeClass("about-active")
 
   if ($("body").hasClass("filter-active")) {
-    resetToHome();
+    
     $("body").removeClass("filter-active")
     window.location.hash = ""
   } else {
-    resetToHome();
+    //resetToHome();
     $("body").addClass("filter-active")
     window.location.hash = "filters"
   }
@@ -27,14 +27,14 @@ $("#menu-filter").click(function(){
 })
 
 $("#menu-about").click(function(){
-  
+  $("body").removeClass("filter-active")
 
   if ($("body").hasClass("about-active")) {
-    resetToHome();
+    //resetToHome();
     $("body").removeClass("about-active")
     window.location.hash = ""
   } else {
-    resetToHome();
+    //resetToHome();
     $("body").addClass("about-active")
     window.location.hash = "about"
   }
@@ -189,11 +189,13 @@ fetch(url)
   $(document).on("click","#filters .tag-filter",function(){
     //resetToHome();
     filter = "."+$(this).data("link");
-    $(".tag-filter").removeClass("active");
+    
+      $(".tag-filter").removeClass("active");
     $(this).addClass("active")
     $(filter).show(200);
     $(".student").not(filter).hide(200);        
     $(".student-filter").not(filter).hide(200);        
+    
   })
 
   //STUDENTS
@@ -225,7 +227,8 @@ $(document).on("click",".student", function(){
       // options
       cellAlign: 'left',
       wrapAround:true,
-      contain: true
+      contain: true,
+      pageDots: false
     });
 
     isFlickity = true;

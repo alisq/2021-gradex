@@ -106,6 +106,7 @@ top: 3.5vw;
     box-shadow:0 0 0 1px #000;
     cursor:url('../img/hover-cursor.png') 2 2, pointer!important;
     background:#FFF;
+    overflow:hidden;
 
     .selected & {
         height: 6.25vw
@@ -143,19 +144,20 @@ top: 3.5vw;
         top:0;
         z-index:16;
         opacity:0;
-        transition:all 0.3s
+        transition:all 0.3s;
+        pointer-events:none;  
     }
 
 
     & .thumb-img {
         width:100%;
-        height:100%;
+        height:100%; 
         //background-size:cover;
-       
+       pointer-events: none;
         background-position:center center;
         position:absolute;
         top:0;
-        z-index:16;
+        z-index:16; 
         opacity:0;
         transition-property: opacity;
         transition-duration: 0.3s;
@@ -280,10 +282,72 @@ top: 3.5vw;
         
         
         display: block;
-        grid-template-columns: 6fr 4fr;
-        text-align:center
+        
+
 
     }
+
+    #navigation h1,
+    #navigation__menu { 
+        padding:0.5em;
+        display:grid; 
+        grid-template-columns: 1fr 1fr;
+        font-size:7vw;
+        align-items:start;
+    }
+
+    #navigation__menu li {
+        padding: 0;
+        font-size:7vw;}
+
+    #navigation span { display:block; }
+
+    #students-filter {
+        display:none;
+    }
+    #tags-filter {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #about,
+    #filters {
+        width:100vw;
+        position:static;
+        height:0;
+        overflow: hidden;
+        padding:0;
+        transition:all 0.5s;
+    }
+
+    .about-active #about,
+    .filter-active #filters {
+        padding:0.5em;
+        height:auto;
+    }
+
+
+    #student {
+        grid-template-columns:1fr;
+        margin-bottom:20vw;
+    }
+
+    #students.selected {
+        width:80vw;
+        left:10vw;
+    }
+
+    #students.selected .student {
+        width:40vw;
+        height:18vw;
+        cursor:url('../img/hover-cursor.png') 2 2, pointer!important;
+    }
+    .about-active #students,
+.filter-active #students {
+    width:100vw;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 
     #students {
         margin-top: 0;
