@@ -253,16 +253,19 @@ h1, h2, h3, h4, h5, h6 {
     display: block; }
   #navigation h1,
   #navigation__menu {
-    padding: 0.5em;
+    padding: 0.25em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    font-size: 7vw;
+    font-size: 3rem;
+    line-height: 3rem;
     align-items: start; }
   #navigation__menu li {
     padding: 0;
-    font-size: 7vw; }
+    line-height: 3rem; }
   #navigation span {
     display: block; }
+  h2, .student-name {
+    font-size: 7vw; }
   #students-filter {
     display: none; }
   #tags-filter {
