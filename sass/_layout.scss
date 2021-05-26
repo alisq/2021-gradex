@@ -283,7 +283,17 @@ top: 3.5vw;
     grid-template-columns: repeat(4, 1fr);
 }
 
-
+.about-active #students.selected,
+.filter-active #students.selected {
+    
+    height: 4.5vw;
+}
+.about-active #students.selected .student,
+.filter-active #students.selected .student {
+        width: 8vw;
+        height: 4.5vw;
+    
+}
 @media (max-width:1000px) {
 
     #navigation {
@@ -351,8 +361,8 @@ top: 3.5vw;
     }
 
     #students.selected .student {
-        width:40vw;
-        height:18vw;
+        width:40vw!important;
+        height:18vw!important;
         cursor:url('../img/hover-cursor2.png') 2 2, pointer!important;
     }
     .about-active #students,
@@ -365,7 +375,7 @@ top: 3.5vw;
     #students {
         margin-top: 0;
         transition:all 0.3s;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr)!important;
         
     }
 
