@@ -5,6 +5,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    cursor:url('../img/regular-cursor2.png') 2 2, default;
     
 }
 
@@ -12,10 +13,9 @@
 html {
     font-size:62.5%;
 }
-
+ 
 body {
-    font-size:2rem;
-    cursor:url('../img/regular-cursor.png') 2 2, default;
+    font-size:2rem;   
 }  
 
 img {
@@ -59,7 +59,9 @@ h1, h2, h3, h4, h5, h6 {
     // height: 5.5vw;
     width:8rem;
     height:8rem;
-    border:1px solid #000;
+    border:2px solid #000;
+    box-shadow:
+    0 0 0 10px white;
     background:white;
     transition:all 0.2s;
 

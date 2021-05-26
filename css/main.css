@@ -3,14 +3,14 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  cursor: url("../img/regular-cursor2.png") 2 2, default; }
 
 html {
   font-size: 62.5%; }
 
 body {
-  font-size: 2rem;
-  cursor: url("../img/regular-cursor.png") 2 2, default; }
+  font-size: 2rem; }
 
 img {
   max-width: 100%;
@@ -24,7 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 .flickity-prev-next-button {
   width: 8rem;
   height: 8rem;
-  border: 1px solid #000;
+  border: 2px solid #000;
+  box-shadow: 0 0 0 10px white;
   background: white;
   transition: all 0.2s; }
   .flickity-prev-next-button:hover {
@@ -130,7 +131,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 12.5vw;
   position: relative;
   box-shadow: 0 0 0 1px #000;
-  cursor: url("../img/hover-cursor.png") 2 2, pointer !important;
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer !important;
   background: #FFF;
   overflow: hidden; }
   .selected .student {
@@ -185,7 +186,8 @@ h1, h2, h3, h4, h5, h6 {
     background: #CCFF00;
     opacity: 0;
     transition: all 0.1s;
-    z-index: 20; }
+    z-index: 20;
+    pointer-events: none; }
   .student.active, .student:hover {
     border: 4px solid #CCFF00;
     z-index: 22; }
@@ -293,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
   #students.selected .student {
     width: 40vw;
     height: 18vw;
-    cursor: url("../img/hover-cursor.png") 2 2, pointer !important; }
+    cursor: url("../img/hover-cursor2.png") 2 2, pointer !important; }
   .about-active #students,
   .filter-active #students {
     width: 100vw;
@@ -325,10 +327,10 @@ a:link,
 a:visited {
   color: #000;
   text-decoration: underline;
-  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer; }
 
 nav li {
-  cursor: url("../img/hover-cursor.png") 2 2, pointer;
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer;
   font-size: 3rem; }
 
 .filter-active #menu-filter,
@@ -343,7 +345,7 @@ h1 {
   display: flex;
   align-items: center;
   padding-left: 1rem;
-  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer; }
 
 h1:hover {
   color: #CCFF00; }
@@ -399,7 +401,7 @@ p {
   border: 1px solid #000;
   margin: 0.15em;
   padding: 0.2em;
-  cursor: url("../img/hover-cursor.png") 2 2, pointer;
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer;
   font-size: 0.75em; }
 
 .tag-filter:hover,
@@ -407,13 +409,13 @@ p {
   background: #CCFF00; }
 
 .student--left .tag-filter {
-  cursor: url("../img/regular-cursor.png") 2 2, pointer; }
+  cursor: url("../img/regular-cursor2.png") 2 2, pointer; }
 
 .student--left .tag-filter:hover {
   background: inherit; }
 
 .student-filter {
-  cursor: url("../img/hover-cursor.png") 2 2, pointer; }
+  cursor: url("../img/hover-cursor2.png") 2 2, pointer; }
   .student-filter .initials {
     border: 2px solid #000;
     display: inline-flex;

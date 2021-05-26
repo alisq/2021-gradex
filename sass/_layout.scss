@@ -104,7 +104,7 @@ top: 3.5vw;
     height: 12.5vw;
     position:relative;
     box-shadow:0 0 0 1px #000;
-    cursor:url('../img/hover-cursor.png') 2 2, pointer!important;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer!important;
     background:#FFF;
     overflow:hidden;
 
@@ -175,9 +175,19 @@ top: 3.5vw;
         opacity:0;
         transition:all 0.1s;
         z-index:20;
+        pointer-events: none;
         
         
     }
+
+    // & .initials,
+    // & .profile-img,
+    // & .profile-img,
+    // & .thumb-img {
+    //     pointer-events:all!important;
+    //     cursor:url('../img/hover-cursor2.png')!important;
+    // }
+
 
     &.active,
     &:hover {
@@ -343,7 +353,7 @@ top: 3.5vw;
     #students.selected .student {
         width:40vw;
         height:18vw;
-        cursor:url('../img/hover-cursor.png') 2 2, pointer!important;
+        cursor:url('../img/hover-cursor2.png') 2 2, pointer!important;
     }
     .about-active #students,
 .filter-active #students {

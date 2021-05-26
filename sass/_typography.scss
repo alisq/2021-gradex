@@ -31,13 +31,13 @@ a:link,
 a:visited {
     color:#000;
     text-decoration:underline;
-    cursor:url('../img/hover-cursor.png') 2 2, pointer;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer;
     
 }
 
 
 nav li {
-    cursor:url('../img/hover-cursor.png') 2 2, pointer;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer;
     font-size:3rem;
 }
 
@@ -56,7 +56,7 @@ h1 {
     display:flex;
     align-items: center;
     padding-left:1rem;
-    cursor:url('../img/hover-cursor.png') 2 2, pointer;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer;
 }
 
 h1:hover {
@@ -127,7 +127,7 @@ p {
     border:1px solid #000;
     margin:0.15em;
     padding:0.2em;
-    cursor:url('../img/hover-cursor.png') 2 2, pointer;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer;
     font-size:0.75em;
 
 }
@@ -139,14 +139,14 @@ p {
 }
 
 .student--left .tag-filter {
-    cursor:url('../img/regular-cursor.png') 2 2, pointer;
+    cursor:url('../img/regular-cursor2.png') 2 2, pointer;
 }
 
 .student--left .tag-filter:hover {
     background:inherit;
 }
 .student-filter {
-    cursor:url('../img/hover-cursor.png') 2 2, pointer;
+    cursor:url('../img/hover-cursor2.png') 2 2, pointer;
 
 
     & .initials {
