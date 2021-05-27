@@ -142,15 +142,15 @@ marquee = $('.marquee')
 // },2000);
 // })
 
-fetch('https://2021.ocadu.gd/feed/tags')
-.then(response => response.json())
-  .then(p => {
-    for (k=0;k<p.length;k++) {
-      /* html */
-      $("#tags-filter").append(`<li class="tag-filter" data-link='t_${p[k].tid[0].value}'>${p[k].name[0].value}</li>`);      
-    }
+// fetch('https://2021.ocadu.gd/feed/tags')
+// .then(response => response.json())
+//   .then(p => {
+//     for (k=0;k<p.length;k++) {
+//       /* html */
+//       $("#tags-filter").append(`<li class="tag-filter" data-link='t_${p[k].tid[0].value}'>${p[k].name[0].value}</li>`);      
+//     }
     
-  });
+//   });
 
 
 var url="https://2021.ocadu.gd/feed/json/";
