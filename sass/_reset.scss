@@ -64,11 +64,33 @@ h1, h2, h3, h4, h5, h6 {
     0 0 0 0.5rem white;
     background:white;
     transition:all 0.2s;
+    font-size:7rem;
 
+
+    & .flickity-button-icon { display:none; }
     &:hover { background:$color-green; }
 
     &.previous { left: 2.9vw; }
     &.next { right: 2.9vw; } 
+
+    &.previous::after { 
+        content:' \21A2'; 
+        position: relative;
+        top: -0.75rem;
+    }
+    &.next::after { 
+        content:' \21A3'; 
+        position: relative;
+        top: -0.75rem;
+    } 
+
+    .filter-active &.previous,
+    .about-active &.previous { left: 1.9vw; }
+    .filter-active &.next,
+    .about-active &.next { right: 1.9vw; }
+
+    
+
 
     & .flickity-button-icon {
     

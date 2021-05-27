@@ -191,9 +191,14 @@ fetch(url)
     filter = "."+$(this).data("link");
     
       $(".tag-filter").removeClass("active");
-    $(this).addClass("active")
+    $(this).addClass("active");
     $(filter).show(200);
-    $(".student").not(filter).hide(200);        
+    if (!$('#students').hasClass("selected")) {
+      
+      $(".student").not(filter).hide(200);        
+
+    }
+    
     $(".student-filter").not(filter).hide(200);        
     
   })
@@ -201,6 +206,7 @@ fetch(url)
   //STUDENTS
   $(document).on("click",".student-filter",function(){
     resetToHome();
+    // $("body").addClass("one-student")
     filter = "#student-"+$(this).data("link");
     $(filter).click();
   })

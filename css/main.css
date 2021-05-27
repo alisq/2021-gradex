@@ -27,13 +27,30 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #000;
   box-shadow: 0 0 0 0.5rem white;
   background: white;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  font-size: 7rem; }
+  .flickity-prev-next-button .flickity-button-icon {
+    display: none; }
   .flickity-prev-next-button:hover {
     background: #CCFF00; }
   .flickity-prev-next-button.previous {
     left: 2.9vw; }
   .flickity-prev-next-button.next {
     right: 2.9vw; }
+  .flickity-prev-next-button.previous::after {
+    content: ' \21A2';
+    position: relative;
+    top: -0.75rem; }
+  .flickity-prev-next-button.next::after {
+    content: ' \21A3';
+    position: relative;
+    top: -0.75rem; }
+  .filter-active .flickity-prev-next-button.previous,
+  .about-active .flickity-prev-next-button.previous {
+    left: 1.9vw; }
+  .filter-active .flickity-prev-next-button.next,
+  .about-active .flickity-prev-next-button.next {
+    right: 1.9vw; }
   .flickity-prev-next-button .flickity-button-icon {
     left: 30%;
     top: 30%;
