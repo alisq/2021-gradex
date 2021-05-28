@@ -77,11 +77,13 @@ h1, h2, h3, h4, h5, h6 {
         content:' \21A2'; 
         position: relative;
         top: -0.75rem;
+        font-weight:100;
     }
     &.next::after { 
         content:' \21A3'; 
         position: relative;
         top: -0.75rem;
+        font-weight:100;
     } 
 
     .filter-active &.previous,
@@ -107,6 +109,16 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width:1000px) {
 
+    .filter-active .flickity-prev-next-button.previous, 
+    .about-active .flickity-prev-next-button.previous {
+        left: 0!important;
+        
+    }
+
+    .filter-active .flickity-prev-next-button.next, 
+    .about-active .flickity-prev-next-button.next {
+        right: 0!important;
+    }
 
 .flickity-prev-next-button {
     width: 10vw;
@@ -114,7 +126,9 @@ h1, h2, h3, h4, h5, h6 {
     height:18vw;
     border:1px solid #000;
     background:white;
+    box-shadow:none;
     transition:all 0.2s;
+    font-size:5rem;
 
     &:hover { background:$color-green; }
 

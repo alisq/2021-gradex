@@ -40,11 +40,13 @@ h1, h2, h3, h4, h5, h6 {
   .flickity-prev-next-button.previous::after {
     content: ' \21A2';
     position: relative;
-    top: -0.75rem; }
+    top: -0.75rem;
+    font-weight: 100; }
   .flickity-prev-next-button.next::after {
     content: ' \21A3';
     position: relative;
-    top: -0.75rem; }
+    top: -0.75rem;
+    font-weight: 100; }
   .filter-active .flickity-prev-next-button.previous,
   .about-active .flickity-prev-next-button.previous {
     left: 1.9vw; }
@@ -58,13 +60,21 @@ h1, h2, h3, h4, h5, h6 {
     height: 40%; }
 
 @media (max-width: 1000px) {
+  .filter-active .flickity-prev-next-button.previous,
+  .about-active .flickity-prev-next-button.previous {
+    left: 0 !important; }
+  .filter-active .flickity-prev-next-button.next,
+  .about-active .flickity-prev-next-button.next {
+    right: 0 !important; }
   .flickity-prev-next-button {
     width: 10vw;
     border-radius: 0;
     height: 18vw;
     border: 1px solid #000;
     background: white;
-    transition: all 0.2s; }
+    box-shadow: none;
+    transition: all 0.2s;
+    font-size: 5rem; }
     .flickity-prev-next-button:hover {
       background: #CCFF00; }
     .flickity-prev-next-button.previous {
@@ -331,7 +341,10 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s;
     grid-template-columns: repeat(2, 1fr) !important; }
   .student {
-    height: 30vw; } }
+    height: 30vw; }
+  .student .initials {
+    width: 5.5rem;
+    height: 5.5rem; } }
 
 @font-face {
   font-family: "suisse";
